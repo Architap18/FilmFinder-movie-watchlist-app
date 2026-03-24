@@ -13,7 +13,14 @@ The goal of this project is to demonstrate the use of JavaScript, API integratio
 
 This project uses the OMDb API (Open Movie Database API) to fetch movie data.
 
-API Link: https://www.omdbapi.com/
+API Link: 
+
+OMDB API: https://www.omdbapi.com/
+
+TMDB API: https://developer.themoviedb.org/docs/getting-started
+
+Watchmode API: https://api.watchmode.com/
+
 
 **🚀 Features (To be implemented)**
 
