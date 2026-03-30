@@ -3,13 +3,8 @@ const searchInput = document.getElementById("searchInput");   //search input ele
 
 async function handleSearch() {
   const query = searchInput.value;
-
   showLoader();
-
   const movies = await fetchMovies(query);
-
-  hideLoader();
-
   if (movies) {
     renderMovies(movies);
   } else {
@@ -18,11 +13,7 @@ async function handleSearch() {
 }
 window.onload = async () => {
   showLoader();
-
   const movies = await fetchTrending();
-
-  hideLoader();
-
   if (movies) {
     renderTrending(movies);
   } else {
@@ -35,13 +26,12 @@ const searchBtn = document.querySelector("button");
 searchBtn.addEventListener("click", async () => {
   const query = searchInput.value.trim();
 
-  if (!query) return;
+  if (!query)
+    {return;}
 
   showLoader();
 
   const movies = await fetchMovies(query);
-
-  hideLoader();
 
   if (movies) {
     renderMovies(movies);
@@ -49,5 +39,3 @@ searchBtn.addEventListener("click", async () => {
     showError("No movies found");
   }
 });
-
-let allMovies = [];
