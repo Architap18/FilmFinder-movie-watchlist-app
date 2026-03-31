@@ -195,7 +195,7 @@ div button{
   gap: 10px;
   padding: 10px 20px;
 }
-#sort, #yearFilter {
+#sort, #year, #genre {
   padding: 12px 30px;
   border-radius: 6px;
   border: none;

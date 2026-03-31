@@ -41,8 +41,8 @@ searchBtn.addEventListener("click", async () => {
   }
 });
 //yearwise
-document.getElementById("yearFilter").addEventListener("change", () => {
-  const year = document.getElementById("yearFilter").value;
+document.getElementById("year").addEventListener("change", () => {
+  const year = document.getElementById("year").value;
   display= allMovies
   .filter(movie =>year === "" || movie.release_date?.startsWith(year));
   renderTrending(display);
@@ -50,13 +50,10 @@ document.getElementById("yearFilter").addEventListener("change", () => {
 //sorting
 document.getElementById("sort").addEventListener("change", () => {
   const option = document.getElementById("sort").value;
-
   let sorted = [...display]; 
-
   if (option === "az") {
     sorted.sort((a, b) => a.title.localeCompare(b.title));
   }
-
   if (option === "year") {
     sorted.sort((a, b) => {
       const dateA = new Date(a.release_date || "2000");
@@ -64,10 +61,20 @@ document.getElementById("sort").addEventListener("change", () => {
       return dateB - dateA;
     });
   }
-
   display = sorted;
   renderTrending(display);
 });
+document.getElementById("genre").addEventListener("change", () => {
+  const genreId = document.getElementById("genre").value;
+  if (genreId === "") {
+    display = allMovies;
+  } else {
+    display = allMovies.
+    filter(movie =>movie.genre_ids.includes(Number(genreId)));
+  }
+  renderTrending(display);
+});
+
 
 const t=document.getElementById("toggle");
 t.addEventListener("click", () => {

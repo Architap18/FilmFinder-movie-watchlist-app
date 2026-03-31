@@ -15,11 +15,9 @@ This project uses the OMDb API (Open Movie Database API) to fetch movie data.
 
 API Link: 
 
-OMDB API: https://www.omdbapi.com/
+OMDB API: https://www.omdbapi.com/ => for searching of movies/seies
 
-TMDB API: https://developer.themoviedb.org/docs/getting-started
-
-Watchmode API: https://api.watchmode.com/
+TMDB API: https://developer.themoviedb.org/docs/getting-started => for showcasing of trending movies
 
 
 **🚀 Features (To be implemented)**
