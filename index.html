@@ -8,27 +8,16 @@
 </head>
 <body>
 
-  <!-- 🔷 Navbar -->
   <header class="navbar">
-  <!-- Left: Logo -->
-  <div class="logo">
-     <span>FilmFinder</span>
-  </div>
-
-  <!-- Center: Search -->
+  <div class="logo"><span>FilmFinder</span></div>
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search for movies, TV shows..." />
     <button onclick="handleSearch()">Search</button>
   </div>
-
-  <!-- Right: Navigation -->
   <div class="nav-links">
     <a href="#" class="active">Home</a>
-    <a href="#">
-      Watchlist
-      <span class="badge">0</span>
-    </a>
-    <button id="themeToggle">🌙</button>
+    <a href="watchlist.html">Watchlist <span id="watchCount">0</span></a>
+    <button id="toggle">🌙</button>
   </div>
 </header>
 
@@ -36,22 +25,24 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Discover Your Next<br>Favourite Story</h1>
-    <p>
-      Millions of movies, TV shows and people to discover. Explore now.
-    </p>
+    <p> Millions of movies, TV shows and people to discover. Explore now.</p>
     <button>Explore Trending</button>
   </div>
 </section>
 <section class="trending">
-  <h2>Trending Now</h2>
-  <div class="trending-list">
-    
-  </div>
-  <div>
-
-  </div>
 </section>
-
+<select id="sort">
+  <option value="">Sort</option>
+  <option value="az">A-Z</option>
+  <option value="year">Year</option>
+</select>
+<select id="yearFilter">
+  <option value="">All Years</option>
+  <option value="2026">2026</option>
+  <option value="2025">2025</option>
+</select>
+<h2>Trending Now</h2>
+<div class="trending-list"></div>
   <script src="js/api.js"></script>
   <script src="js/watchlist.js"></script>
   <script src="js/app.js"></script>
