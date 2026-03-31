@@ -69,12 +69,8 @@ document.getElementById("sort").addEventListener("change", () => {
   renderTrending(display);
 });
 
-const themeBtn = document.getElementById("toggle");
-
-themeBtn.addEventListener("click", () => {
+const t=document.getElementById("toggle");
+t.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
-
-  // Optional: change icon
-  themeBtn.textContent =
-    document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+  t.textContent =document.body.classList.contains("light-mode") ? "☀️" : "🌙";
 });
