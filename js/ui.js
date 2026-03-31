@@ -15,7 +15,7 @@ function renderTrending(movies) {
       <h3>${movie.title}</h3>
       <p>${movie.release_date ? movie.release_date.slice(0, 4) : "N/A"}</p>
     `;
-
+    
     container.appendChild(card);
   });
 }
@@ -28,10 +28,7 @@ function renderMovies(movies) {
     const card = document.createElement("div");
     card.classList.add("movie-card");
 
-    const poster = movie.Poster !== "N/A"
-      ? movie.Poster
-      : "assets/background.jpg";
-
+    const poster = movie.Poster !== "N/A"? movie.Poster:"assets/background.jpg";
     card.innerHTML = `
       <div class="poster-container">
         <img src="${poster}" onerror="this.src='assets/background.jpg'">
@@ -40,7 +37,6 @@ function renderMovies(movies) {
       <h3>${movie.Title}</h3>
       <p>${movie.Year}</p>
     `;
-
     container.appendChild(card);
   });
 }

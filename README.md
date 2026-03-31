@@ -34,7 +34,7 @@ Users can add or remove movies from their watchlist
 
 🎯 Filtering
 
-Filter movies based on type (movie, series)
+Filter movies based on genre
 
 Filter by year
 
