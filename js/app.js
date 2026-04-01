@@ -54,16 +54,17 @@ document.getElementById("sort").addEventListener("change", () => {
   if (option === "az") {
     sorted.sort((a, b) => a.title.localeCompare(b.title));
   }
-  if (option === "year") {
-    sorted.sort((a, b) => {
-      const dateA = new Date(a.release_date || "2000");
-      const dateB = new Date(b.release_date || "2000");
+  if (option === "year"){
+    sorted.sort((a,b)=>{
+      const dateA = new Date(a.release_date||"2000");
+      const dateB = new Date(b.release_date||"2000");
       return dateB - dateA;
     });
   }
   display = sorted;
   renderTrending(display);
 });
+//genre
 document.getElementById("genre").addEventListener("change", () => {
   const genreId = document.getElementById("genre").value;
   if (genreId === "") {
