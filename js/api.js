@@ -1,3 +1,4 @@
+//fetching data displayed on dashboard
 const TMDB_KEY = "a7fc6ada70faebbe123123c351922274";
 
 async function fetchTrending() {
