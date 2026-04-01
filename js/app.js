@@ -65,16 +65,16 @@ document.getElementById("sort").addEventListener("change", () => {
   renderTrending(display);
 });
 //genre
-document.getElementById("genre").addEventListener("change", () => {
-  const genreId = document.getElementById("genre").value;
-  if (genreId === "") {
-    display = allMovies;
-  } else {
-    display = allMovies.
-    filter(movie =>movie.genre_ids.includes(Number(genreId)));
-  }
-  renderTrending(display);
-});
+// document.getElementById("genre").addEventListener("change", () => {
+//   const genreId = document.getElementById("genre").value;
+//   if (genreId === "") {
+//     display = allMovies;
+//   } else {
+//     display = allMovies.
+//     filter(movie =>movie.genre_ids.includes(Number(genreId)));
+//   }
+//   renderTrending(display);
+// });
 
 
 const t=document.getElementById("toggle");
