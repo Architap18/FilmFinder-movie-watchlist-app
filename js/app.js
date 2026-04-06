@@ -61,10 +61,10 @@ if (searchBtn) {
 
 
 // filtering and sorting on dashboard
-const yearEl = document.getElementById("year");
-if (yearEl) {
-  yearEl.addEventListener("change", () => {
-    const year = yearEl.value;
+const year = document.getElementById("year");
+if (year) {
+  year.addEventListener("change", () => {
+    const year = year.value;
 
     display = allMovies.filter(movie =>
       year === "" || movie.release_date?.startsWith(year)
@@ -74,10 +74,10 @@ if (yearEl) {
   });
 }
 
-const sortEl = document.getElementById("sort");
-if (sortEl) {
-  sortEl.addEventListener("change", () => {
-    const option = sortEl.value;
+const sort= document.getElementById("sort");
+if (sort) {
+  sort.addEventListener("change", () => {
+    const option = sort.value;
     let sorted = [...display];
 
     if (option === "az") {
@@ -97,10 +97,10 @@ if (sortEl) {
   });
 }
 
-const genreEl = document.getElementById("genre");
-if (genreEl) {
-  genreEl.addEventListener("change", () => {
-    const genreId = genreEl.value;
+const genre= document.getElementById("genre");
+if (genre) {
+  genre.addEventListener("change", () => {
+    const genreId = genre.value;
 
     if (genreId === "") {
       display = allMovies;
@@ -188,7 +188,8 @@ function addToWatchlistById(id) {
     display.find(m => m.id == id) ||
     searchResults.find(m => m.imdbID == id); // 🔥 FIX
 
-  if (!movie) return;
-
+  if (!movie) {
+    return;
+  }
   addToWatchlist(movie);
 }
