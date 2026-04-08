@@ -69,30 +69,27 @@ function showError(msg) {
 
 //watchlist
 function renderWatchlist() {
-  const container = document.getElementById("watchlist");
-  if (!container) return;
-
+  const container = document.getElementById("watchlist-container");
+  const emptyState = document.getElementById("empty-state");
+  const movies = JSON.parse(localStorage.getItem("watchlist")) || [];
   container.innerHTML = "";
+  if (movies.length === 0) {
+    emptyState.style.display = "block";
+  } else {
+    emptyState.style.display = "none";
 
-  if (watchlist.length === 0) {
-    container.innerHTML = "<p>No movies added 😢</p>";
-    return;
-  }
+    movies.forEach(movie => {
+      const card = document.createElement("div");
+      card.className = "movie-card";
 
-  watchlist.forEach(movie => {
-    const div = document.createElement("div");
-    div.classList.add("movie-card");
-
-    div.innerHTML = `
-      <img src="${movie.poster}" style="width:120px;">
-      <p>${movie.title}</p>
-      <button onclick="removeFromWatchlist('${movie.id}')">
-        Remove 
-      </button>
+      card.innerHTML = `
+      <img src="${movie.poster}" onerror="this.src='assets/background.jpg'">
+      <h3>${movie.title}</h3>
+      <button class="remove-btn2" onclick="removeMovie(${movie.id})">Remove</button>
     `;
-
-    container.appendChild(div);
-  });
+      container.appendChild(card);
+    });
+  }
 }
 
 function renderMovieDetails(movie) {
@@ -108,4 +105,15 @@ function renderMovieDetails(movie) {
     <img src="${poster}" style="width:200px">
     <p>${movie.overview || movie.Plot}</p>
   `;
+}
+
+
+function removeMovie(id) {
+  let movies = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+  movies = movies.filter(movie => movie.id !== id);
+
+  localStorage.setItem("watchlist", JSON.stringify(movies));
+
+  renderWatchlist(); 
 }

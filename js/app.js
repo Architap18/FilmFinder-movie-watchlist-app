@@ -96,7 +96,7 @@ if (sort) {
     renderTrending(display);
   });
 }
-
+ //genre via tmdb api 
 const genre= document.getElementById("genre");
 if (genre) {
   genre.addEventListener("change", () => {
@@ -123,15 +123,11 @@ if (t) {
     t.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
   });
 }
-
-
 // watchlist
 let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-
 function saveWatchlist() {
   localStorage.setItem("watchlist", JSON.stringify(watchlist));
 }
-
 
 // ADD to watchlist
 function addToWatchlist(movie) {
@@ -139,21 +135,21 @@ function addToWatchlist(movie) {
     id: movie.id || movie.imdbID,
     title: movie.title || movie.Title,
     poster: movie.poster_path
-      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      : movie.Poster || "assets/background.jpg"
+    ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+    : "assets/background.jpg"
   };
 
   if (!watchlist.find(m => m.id == normalizedMovie.id)) {
     watchlist.push(normalizedMovie);
     saveWatchlist();
-    showToast("Added to Watchlist ❤️");
+    showToast("Added to Watchlist ");
   }
 }
 // REMOVE from watchlist
 function removeFromWatchlist(id) {
   watchlist = watchlist.filter(m => String(m.id) !== String(id));
   saveWatchlist();
-  showToast("Removed ❌");
+  showToast("Remove");
 
   // Only re-render if on watchlist page
   if (document.getElementById("watchlist")) {
