@@ -1,65 +1,92 @@
-# FilmFinder--Movie-Watchlist-App
-**📌Project Overview**
+FilmFinder — Movie Watchlist App
 
-FilmFinder is a web application designed to help users discover movies and maintain a personalized watchlist. The app allows users to search for movies, explore details, and save their favorite selections for future viewing.
+**Project Overview**
 
-The name "FilmFinder" reflects the idea of a movie companion that assists users in finding and organizing films.
+FilmFinder is a fully functional web application that helps users discover movies and manage a personalized watchlist. Users can search for movies, explore detailed information, filter and sort results, and save their favorite films for later viewing.
 
-**🎯 Objective**
+The name FilmFinder represents a smart movie companion that simplifies the process of finding and organizing movies in one place.
 
-The goal of this project is to demonstrate the use of JavaScript, API integration, and dynamic UI development by building an interactive and user-friendly movie search application.
+**Objective**
 
-**🌐 API Used**
+The objective of this project is to demonstrate strong frontend development skills using JavaScript and API integration by building an interactive and user-friendly movie search platform.
 
-This project uses the OMDb API (Open Movie Database API) to fetch movie data.
+**APIs Used**
 
-API Link: 
+OMDb API – Used for searching movies and fetching detailed information
 
-OMDB API: https://www.omdbapi.com/ => for searching of movies/seies
+TMDB API – Used to display trending/popular movies
 
-TMDB API: https://developer.themoviedb.org/docs/getting-started => for showcasing of trending movies
+**Features**
 
+🔍 Movie Search
 
-**🚀 Features (To be implemented)**
+Search movies by title in real-time
 
-🔍 Search Functionality
+Dynamic results fetched using API
 
-Users can search for movies by title
+Displays movie posters and titles
 
-Results are fetched dynamically using the API
+📈 Trending Movies
 
-❤️ Watchlist Feature
+Shows trending/popular movies using TMDB API
 
-Users can add or remove movies from their watchlist
+Helps users discover new content
 
-🎯 Filtering
+❤️ Watchlist Management
+
+Add movies to a personal watchlist
+
+Remove movies from the watchlist
+
+🎯 Filtering Options
 
 Filter movies based on genre
 
-Filter by year
+Filter movies by release year
 
-🔃 Sorting
+🔃 Sorting Options
 
-Sort movies alphabetically (A-Z / Z-A)
+Sort movies A -> Z
 
-Sort by release year
+Sort movies by release year
 
 📭 Empty State Handling
 
-Display messages when no results are found
+Displays user-friendly messages when:
 
-**🛠 Technologies Used**
+No search results are found
 
-HTML
+Watchlist is empty
 
-CSS
+💡 Responsive UI
 
-JavaScript
+Clean and modern user interface
 
-Fetch API
+Works smoothly across different screen sizes
+
+**Technologies Used**
+
+HTML – Structure of the application
+
+CSS – Styling and layout
+
+JavaScript – Logic and interactivity
+
+Fetch API – API requests and data handling
 
 **⚙️ Setup and Run Instructions**
 
 Clone the repository
 
-Run index.html file.
+git clone https://github.com/your-username/FilmFinder.git
+
+Navigate to the project folder
+
+cd FilmFinder
+
+Open index.html in your browser
+
+
+**Author**
+
+Developed by ARCHITA PAL
