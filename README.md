@@ -78,7 +78,7 @@ Fetch API – API requests and data handling
 
 Clone the repository
 
-git clone https://github.com/your-username/FilmFinder.git
+git clone
 
 Navigate to the project folder
 
