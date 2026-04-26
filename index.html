@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FilmFinder</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="navbar">
   <div class="logo"><span>FilmFinder</span></div>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search for movies, TV shows..." />
-    <button id="searchBtn">Search</button>
-  </div>
+  <div class="search-container">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" placeholder="Search for movies, TV shows..." />
+  <button>Search</button>
+</div>
   <div class="nav-links">
     <a href="#" class="active">Home</a>
     <a href="watchlist.html">Watchlist </a>
@@ -24,10 +27,31 @@
 <!-- the board -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Discover Your Next<br>Favourite Story</h1>
+    <h1 class="hero-title">
+  Discover <br>
+  Your Next <br>
+  <span class="outline">Favourite</span> <br>
+  Story
+</h1>
     <p> Millions of movies, TV shows and people to discover. Explore now.</p>
     <button ><a style=" text-decoration: none; color: white;" href="#trend">Explore Trending</a></button>
+    <div class="stats">
+      <div class="stat">
+        <h2>1M+</h2>
+        <p>TITLES</p>
+      </div>
+      
+      <div class="stat">
+        <h2>50K+</h2>
+        <p>TV SHOWS</p>
+      </div>
+      
+      <div class="stat">
+        <h2>Daily</h2>
+        <p>UPDATES</p>
+      </div>
   </div>
+</div>
 </section>
 
 <div class="c">
@@ -60,35 +84,86 @@
   <div class="footer-container">
 
     <!-- LEFT -->
-    <div class="footer-col">
-      <h2>🎬 FilmFinder</h2>
-      <p>Discover your next favorite movie</p>
-      <p class="email">📩 filmfinder.support@gmail.com</p>
+    <div class="footer-col brand">
+      <h2></span>FilmFinder</h2>
+      <p>
+        Discover your next favorite movie or TV show.
+        Build watchlists, track what you've seen, and stay on top of what's trending.
+      </p>
+      <p class="email">filmfinder.support@gmail.com</p>
     </div>
 
-    <!-- CENTER -->
+    <!-- NAV -->
     <div class="footer-col">
-      <h3>Quick Links</h3>
-      <a href="index.html">🏠</a>
-      <a href="watchlist.html">🎞️</a>
+      <h3>NAVIGATE</h3>
+      <ul>
+        <li>Home</li>
+        <li>Watchlist</li>
+        <li>Trending</li>
+        <li>Top Rated</li>
+      </ul>
     </div>
 
-    <!-- RIGHT -->
+    <!-- GENRES -->
     <div class="footer-col">
-      <h3>Connect</h3>
-      <div class="social-icons">
-        <a href="https://github.com/Architap18" target="_blank">🐙</a>
-        <a href="https://www.linkedin.com/in/archita-pal-a5a23a2b7/" target="_blank">💼</a>
-      </div>
+      <h3>GENRES</h3>
+      <ul>
+        <li>Action</li>
+        <li>Horror</li>
+        <li>Comedy</li>
+        <li>Romance</li>
+      </ul>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h3>COMPANY</h3>
+      <ul>
+        <li>About</li>
+        <li>Privacy Policy</li>
+        <li>Terms of Service</li>
+        <li>Contact</li>
+      </ul>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 FilmFinder</p>
+    <p>© 2026 FilmFinder. All rights reserved.</p>
+
+   <div class="footer-icons">
+  <a href="https://github.com/Architap18" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/archita-pal-a5a23a2b7/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://x.com/PrimeVideo" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a href="#">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="primevideo.support@gmail.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
   </div>
 
 </footer>
+<script>
+  if (!localStorage.getItem("user")) {
+    window.location.href = "login.html";
+  }
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>
   <script src="js/ui.js"></script>

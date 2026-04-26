@@ -14,14 +14,15 @@ function renderTrending(movies) {
     const isAdded = watchlist.some(m => m.id == id);
 
     card.innerHTML = `
-      <div class="poster-container">
-        <img src="${img}" onclick="goToMovie('${id}')" onerror="this.src='assets/background.jpg'">
+  <div class="poster-container">
+    <img src="${img}" onclick="goToMovie('${id}')" onerror="this.src='assets/background.jpg'">
+    <button class="add-btn" onclick="addToWatchlistById('${movie.id}')">
+     ${isAdded ? "Added" : "ADD"}
+    </button>
 
-       <button onclick="addToWatchlistById('${movie.id}')">ADD</button>
-
-      <h3>${movie.title}</h3>
-      <p>${movie.release_date ? movie.release_date.slice(0, 4) : "N/A"}</p>
-    `;
+  <h3>${movie.title}</h3>
+  <p>${movie.release_date ? movie.release_date.slice(0, 4) : "N/A"}</p>
+`;
 
     container.appendChild(card);
   });
@@ -83,9 +84,9 @@ function renderWatchlist() {
       card.className = "movie-card";
 
       card.innerHTML = `
-      <img src="${movie.poster}" onerror="this.src='assets/background.jpg'">
+      <img src="${movie.poster}">
       <h3>${movie.title}</h3>
-      <button class="remove-btn2" onclick="removeMovie(${movie.id})">Remove</button>
+      <button class="remove-btn2" onclick="removeMovie('${movie.id}')">Remove</button>
     `;
       container.appendChild(card);
     });
@@ -111,9 +112,10 @@ function renderMovieDetails(movie) {
 function removeMovie(id) {
   let movies = JSON.parse(localStorage.getItem("watchlist")) || [];
 
-  movies = movies.filter(movie => movie.id !== id);
+  movies = movies.filter(movie => String(movie.id) !== String(id));
 
   localStorage.setItem("watchlist", JSON.stringify(movies));
 
   renderWatchlist(); 
 }
+

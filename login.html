@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FilmFinder</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <h2 class="logo">FILMFINDER</h2>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Trending</a>
+  </div>
+</nav>
+
+<div class="auth-container">
+
+  <div class="tabs">
+    <button id="loginTab" class="active">Sign In</button>
+    <button id="signupTab">Create Account</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="loginForm" class="form active">
+    <h2>WELCOME BACK</h2>
+    <p class="sub">Sign in to continue your watchlist journey.</p>
+
+    <label>Email</label>
+    <input id="loginEmail" type="email" placeholder="you@example.com" />
+
+    <label>Password</label>
+    <input id="loginPw" type="password" placeholder="••••••••" />
+
+    <div class="row">
+      <label><input type="checkbox" /> Remember me</label>
+      <a href="#" class="link">Forgot password?</a>
+    </div>
+
+    <button id="loginBtn" class="btn primary">Sign In</button>
+  </div>
+
+  <!-- SIGNUP -->
+  <div id="signupForm" class="form">
+    <h2>Create Account</h2>
+
+    <label>Full Name</label>
+    <input id="signupName" type="text" placeholder="John Doe" />
+
+    <label>Email</label>
+    <input id="signupEmail" type="email" placeholder="you@example.com" />
+
+    <label>Password</label>
+    <input id="signupPw" type="password" placeholder="••••••••" />
+
+    <div class="strength">
+      <div id="bar1"></div>
+      <div id="bar2"></div>
+      <div id="bar3"></div>
+      <div id="bar4"></div>
+    </div>
+
+    <button id="signupBtn" class="btn primary">Signup</button>
+  </div>
+
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>
