@@ -48,7 +48,7 @@ function renderMovies(movies) {
       <div class="poster-container">
         <img src="${poster}" onclick="goToMovie('${id}')" onerror="this.src='assets/background.jpg'">
 
-        <button onclick="addToWatchlistById('${movie.imdbID}')">ADD</button>
+        <button class="add-btn" onclick="addToWatchlistById('${movie.imdbID}')">ADD</button>
       </div>
 
       <h3>${movie.Title}</h3>
