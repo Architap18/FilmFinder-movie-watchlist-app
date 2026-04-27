@@ -4,21 +4,63 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
-
 body {
   margin: 0;
+  padding: 0;
+  height: 100vh;
   font-family: 'DM Sans', sans-serif;
-  background: #0b0b0b;
+  background: url(./assets/bg.jpg) no-repeat center center;
+  background-size: cover;
+  
   color: #fff;
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
+  background: rgba(0, 0, 0, 0.7); /* increase to 0.8 for darker */
+
+  z-index: -1;
+}
+.logo-center {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 78px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff2c2c;
+  text-shadow:
+    0 0 10px rgba(255, 0, 0, 0.6),
+    0 0 40px rgba(255, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #777;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.auth-container {
+  width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #0d0d0d;
+  border-radius: 16px;
+  border: 1px solid #222;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03),
+  0 20px 60px rgba(0,0,0,0.8);
+}
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
 }
-
 .logo {
   color: red;
 }
@@ -29,14 +71,6 @@ body {
   text-decoration: none;
 }
 
-.auth-container {
-  width: 480px;
-  margin: 100px auto;
-  padding: 40px;
-  background: #111;
-  border-radius: 14px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.6);
-}
 .add-btn {
   background: #ff2c2c;
   color: white;
@@ -124,9 +158,16 @@ input {
 }
 
 .primary {
-  background: red;
+  background: transparent;
+  border: 1px solid #555;
   color: white;
-  border-radius: 6px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.primary:hover {
+  border-color: #ff2c2c;
+  box-shadow: 0 0 10px rgba(255,44,44,0.3);
 }
 
 .strength {
@@ -143,7 +184,8 @@ input {
 
 .weak { background: red; }
 .medium { background: orange; }
-.strong { background: green; }
+.strong { background: green;}
+
 
 /* Navbar */
 .navbar {
